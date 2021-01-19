@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="pom">
+        <div class="heading">
+            <h1>pomodoro</h1>
+        </div>
+        <div class="options">
+                <button class="pomodoro active">pomodoro</button>
+                <button class="sbreak">short break</button>
+                <button class="lbreak">long break</button>
+                <div></div>
+        </div>
+        <div class="main">
+            <div class="mainback">
+                <div class="clock">
+                    <p class="pmin">0</p>:
+                    <p class="psec">00</p>
+                </div>
+                <button class="start">start</button>
+                <button class="pause off">pause</button>
+                <button class="reset off">reset</button>
+            </div>
+        </div>
+        <button class="setting">Settings</button>
+
+        <div class="settingbox">
+            <div class="heading">
+                <h1>Settings</h1>
+            </div><hr>
+            <div class="time">
+                <h4>time(minutes)</h4>
+                <div class="setvalues">
+                    <div class="setvalue">
+                        <p>pomodoro</p>
+                        <input type="number" name="min" id="pomomin" value="25" min="0">
+                    </div>
+                    <div class="setvalue">
+                        <p>short break</p>
+                        <input type="number" name="min" id="smin" value="5" min="0">
+                    </div>
+                    <div class="setvalue">
+                        <p>long break</p>
+                        <input type="number" name="min" id="lmin" value="15" min="0">
+                    </div>
+                </div>
+            </div><hr>
+            <div class="font sbox">
+                <h4>font</h4>
+                <div class="circle-container">
+                    <div class="circle font1 f active">
+                        Aa
+                    </div>
+                    <div class="circle font2 f">
+                        Aa
+                    </div>
+                    <div class="circle font3 f">
+                        Aa
+                    </div>
+                </div>
+            </div><hr>
+            <div class="color sbox">
+                <h4>color</h4>
+                <div class="circle-container">
+                    <div class="circle color acolor active">
+                    </div>
+                    <div class="circle color bcolor">
+                    </div>
+                    <div class="circle color ccolor">
+                    </div>
+                </div>
+            </div>
+            <div class="apply">
+                <h3>Apply</h3>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

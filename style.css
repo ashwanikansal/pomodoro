@@ -1,0 +1,307 @@
+:root {
+  --pink: #fa6f6f;
+  --cyan: #71f2f9;
+  --purple: #da81f6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.pom {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  background-color: #1e2140;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 0;
+  font-family: sans-serif;
+}
+
+.pom h1 {
+  font-family: sans-serif;
+  color: rgb(214, 213, 218);
+  margin-bottom: 3rem;
+}
+
+.pom .options {
+  min-width: 330px;
+  padding: 0.3rem;
+  border-radius: 2rem;
+  position: relative;
+  background-color: #151932;
+  display: flex;
+  z-index: 1;
+}
+
+.pom .options div {
+  position: absolute;
+  top: 0.3rem;
+  left: calc(0.3rem + 0%);
+  border-radius: 1.1rem;
+  width: calc(33% - 0.3rem);
+  height: calc(100% - 0.6rem);
+  background-color: var(--pink);
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.pom .options button {
+  flex: 1;
+  z-index: 5;
+  font-weight: 600;
+  color: rgb(164, 163, 167);
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 1.1rem;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pom .options button.active {
+  color: #151932;
+}
+
+.pom .main {
+  margin: 4rem;
+  height: 280px;
+  width: 280px;
+  border-radius: 50%;
+  background-color: white;
+  background-image: linear-gradient(to right bottom, #151932, #2a2d52);
+  box-shadow: -1rem -1rem 50px #262a57, 1rem 1rem 50px #151932;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pom .main .mainback {
+  color: rgb(214, 213, 218);
+  height: 90%;
+  width: 90%;
+  border-radius: 50%;
+  background-color: #151932;
+  position: relative;
+}
+
+.pom .main .mainback::before {
+  content: "";
+  position: absolute;
+  width: 88%;
+  height: 88%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 0.4rem solid var(--pink);
+}
+
+.pom .main .mainback .clock {
+  font-weight: 500;
+  width: 60%;
+  font-size: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+}
+
+.pom .main .mainback button {
+  cursor: pointer;
+  color: var(--pink);
+  background-color: #151932;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  position: absolute;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.pom .main .mainback button.off {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.pom .main .mainback .start,
+.pom .main .mainback .pause {
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -75%);
+}
+
+.pom .main .mainback .reset {
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+}
+
+.pom .setting {
+  color: rgb(214, 213, 218);
+  background-color: #1e2140;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.pom .settingbox {
+  pointer-events: none;
+  z-index: 10;
+  position: absolute;
+  opacity: 0;
+  top: -50%;
+  left: 50%;
+  border-radius: 20px;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  max-width: 330px;
+  height: 70vh;
+  background-color: white;
+  color: #191c36;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 2rem 4rem 2rem;
+  transition: all 0.3s ease;
+}
+
+.pom .settingbox.appear {
+  pointer-events: all;
+  opacity: 1;
+  top: 50%;
+}
+
+.pom .settingbox .heading {
+  max-height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pom .settingbox .heading h1 {
+  color: #191c36;
+  margin-bottom: 0;
+}
+.pom .settingbox .heading p {
+  cursor: pointer;
+  color: #8f8d95;
+}
+
+.pom .settingbox h4 {
+  color: #191c36;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.pom .settingbox p {
+  color: #8f8d95;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.pom .settingbox .setvalues {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.8rem;
+}
+
+.pom .settingbox input {
+  color: #191c36;
+  background-color: #eef1fa;
+  font-weight: 900;
+  outline: none;
+  width: 90%;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.pom .settingbox .apply {
+  cursor: pointer;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--pink);
+  padding: 0.8rem 2rem;
+  border-radius: 2rem;
+  color: white;
+}
+
+.pom .settingbox .sbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pom .settingbox .sbox h4 {
+  margin-bottom: 0;
+}
+
+.pom .settingbox .circle-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.pom .settingbox .f.active {
+  background-color: #191c36;
+  border: 3px solid #191c36;
+}
+
+.pom .settingbox .font1 {
+  font-family: sans-serif;
+}
+
+.pom .settingbox .font2 {
+  font-family: serif;
+}
+
+.pom .settingbox .font3 {
+  font-family: monospace;
+}
+
+.pom .settingbox .circle {
+  cursor: pointer;
+  color: #8f8d95;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 1.3rem;
+  border: 3px solid white;
+  background-color: #eef1fa;
+  border-radius: 50%;
+  text-align: center;
+  margin-left: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.pom .settingbox .color.active {
+  border: 3px solid #191c36;
+}
+
+.pom .settingbox .acolor {
+  background-color: #fa6f6f;
+}
+
+.pom .settingbox .bcolor {
+  background-color: #71f2f9;
+}
+
+.pom .settingbox .ccolor {
+  background-color: #da81f6;
+}
